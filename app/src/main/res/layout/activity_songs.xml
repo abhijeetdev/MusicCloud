@@ -5,18 +5,13 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.android.musiccloud.MainActivity"
->
+        tools:context="com.example.android.musiccloud.SongsActivity">
 
-
-    <GridView
-            android:id="@+id/gridView"
+    <ListView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:numColumns="auto_fit"
-            android:columnWidth="@dimen/grid_item_coloumn_width"/>
-
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/list_view_songs"/>
 </android.support.constraint.ConstraintLayout>
