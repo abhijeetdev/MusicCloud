@@ -20,7 +20,8 @@
                 android:name=".SongsActivity"
                 android:label="@string/song_list">
         </activity>
-        <activity android:name=".DetailActivity">
+        <activity android:name=".DetailActivity"
+        android:label="@string/now_palying">
         </activity>
     </application>
 

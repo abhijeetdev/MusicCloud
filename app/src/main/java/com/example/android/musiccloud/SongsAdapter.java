@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * Created by abhijeetb on 09/05/2018.
  */
 
-public class SongsAdapter extends ArrayAdapter {
+public class SongsAdapter extends ArrayAdapter <Song> {
     public SongsAdapter(@NonNull Context context, ArrayList<Song> songs) {
         super(context, 0,songs);
     }
@@ -28,14 +28,14 @@ public class SongsAdapter extends ArrayAdapter {
             final LayoutInflater layoutInflater = LayoutInflater.from(getContext());
             convertView = layoutInflater.inflate(R.layout.layout_song, null);
         }
-        final TextView titleTextView = (TextView)convertView.findViewById(R.id.textViewTitle);
-        titleTextView.setText("Tu Dil ki Dhadakan me");
 
-        final TextView  singersTextView = (TextView)convertView.findViewById(R.id.textViewSingers);
-        singersTextView.setText("Lata, asha, kishor");
+        Song currentSong = getItem(position);
+
+        final TextView titleTextView = (TextView)convertView.findViewById(R.id.textViewTitle);
+        titleTextView.setText(currentSong.getTitle());
 
         final TextView  durationTextView = (TextView)convertView.findViewById(R.id.textViewDuration);
-        durationTextView.setText("4.54");
+        durationTextView.setText(currentSong.getDuration());
 
         return convertView;
 

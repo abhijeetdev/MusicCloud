@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -17,30 +18,26 @@ public class SongsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_songs);
 
-        final ArrayList<Song> songs = new ArrayList<>();
-        songs.add(new Song());
-        songs.add(new Song());
-        songs.add(new Song());
-        songs.add(new Song());
-        songs.add(new Song());
-        songs.add(new Song());
-        songs.add(new Song());
-        songs.add(new Song());
-        songs.add(new Song());
-        songs.add(new Song());
-        songs.add(new Song());
-        songs.add(new Song());
+        final Album album = (Album) getIntent().getSerializableExtra("SelectedAlbum");
+        if(album != null) {
+            SongsAdapter adapter = new SongsAdapter(this, album.getSongs());
 
-        SongsAdapter adapter = new SongsAdapter(this, songs);
-        ListView listView = (ListView)findViewById(R.id.list_view_songs);
-        listView.setAdapter(adapter);
+            ImageView albumCover = (ImageView)findViewById(R.id.album_cover);
+            albumCover.setImageResource(album.getImageResourceID());
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(view.getContext(), DetailActivity.class);
-                startActivity(intent);
-            }
-        });
+            ListView listView = (ListView)findViewById(R.id.list_view_songs);
+            listView.setAdapter(adapter);
+
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    Intent intent = new Intent(view.getContext(), DetailActivity.class);
+                    intent.putExtra("SelectedAlbum", album);
+                    intent.putExtra("SelectedSongIndex",i);
+                    startActivity(intent);
+                }
+            });
+        }
+
     }
 }

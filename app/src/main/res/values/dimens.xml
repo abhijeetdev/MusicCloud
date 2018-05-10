@@ -5,4 +5,17 @@
     <dimen name="grid_horizontal_spacing">50dp</dimen>
     <dimen name="favorite_image_width">24dp</dimen>
     <dimen name="favorite_image_height">24dp</dimen>
+    <dimen name="song_list_image_view_height">200dp</dimen>
+    <dimen name="layout_margin">8dp</dimen>
+    <dimen name="text_size_singers">24sp</dimen>
+    <dimen name="text_size_song_title">24sp</dimen>
+    <dimen name="text_size_detail_singers_list">18sp</dimen>
+    <dimen name="button_layout_width">40dp</dimen>
+    <dimen name="button_layout_height">40dp</dimen>
+    <dimen name="layout_marginEnd">32dp</dimen>
+    <dimen name="layout_marginTop">64dp</dimen>
+    <dimen name="album_layout_marginTop">4dp</dimen>
+    <dimen name="layout_width_seekerbar">0dp</dimen>
+    <dimen name="layout_height_seekerbar">14dp</dimen>
+    <dimen name="layout_width_Zero">0dp</dimen>
 </resources>

@@ -29,12 +29,14 @@ public class AlbumAdapter extends ArrayAdapter<Album> {
             convertView = layoutInflater.inflate(R.layout.layout_album, null);
         }
 
-        //final ImageView imageView = (ImageView)convertView.findViewById(R.id.imageView_cover_art);
+        Album album = getItem(position);
+
+        final ImageView imageView = (ImageView)convertView.findViewById(R.id.imageView_cover_art);
+        imageView.setImageResource(album.getIconResourceID());
         //final ImageView imageViewFavorite = (ImageView)convertView.findViewById(R.id.image_view_favorite_album);
         final TextView albumNameTextView = (TextView)convertView.findViewById(R.id.text_view_album_name);
+        albumNameTextView.setText(album.getTitle());
 
-
-        albumNameTextView.setText(String.valueOf(position));
         return convertView;
     }
 }

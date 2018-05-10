@@ -17,6 +17,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:numColumns="auto_fit"
-            android:columnWidth="@dimen/grid_item_coloumn_width"/>
+            android:columnWidth="@dimen/grid_item_coloumn_width" android:layout_marginTop="@dimen/layout_margin"/>
 
 </android.support.constraint.ConstraintLayout>
