@@ -18,10 +18,13 @@
         </activity>
         <activity
                 android:name=".SongsActivity"
-                android:label="@string/song_list">
+                android:label="@string/song_list"
+                android:parentActivityName=".MainActivity"
+        android:launchMode="singleTop">
         </activity>
         <activity android:name=".DetailActivity"
-        android:label="@string/now_palying">
+                  android:label="@string/now_palying"
+                  android:parentActivityName=".SongsActivity">
         </activity>
     </application>
 

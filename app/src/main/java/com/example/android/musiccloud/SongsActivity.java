@@ -12,32 +12,31 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class SongsActivity extends AppCompatActivity {
+    final Album album = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_songs);
 
-        final Album album = (Album) getIntent().getSerializableExtra("SelectedAlbum");
-        if(album != null) {
-            SongsAdapter adapter = new SongsAdapter(this, album.getSongs());
+        final Album album = (Album) getIntent().getSerializableExtra(Constants.SELECTED_ALBUM);
+        SongsAdapter songsAdapter = new SongsAdapter(this, album.getSongs());
 
-            ImageView albumCover = (ImageView)findViewById(R.id.album_cover);
-            albumCover.setImageResource(album.getImageResourceID());
+        ImageView albumCover = (ImageView)findViewById(R.id.album_cover);
+        albumCover.setImageResource(album.getImageResourceID());
 
-            ListView listView = (ListView)findViewById(R.id.list_view_songs);
-            listView.setAdapter(adapter);
+        ListView songsListView = (ListView)findViewById(R.id.list_view_songs);
+        songsListView.setAdapter(songsAdapter);
 
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Intent intent = new Intent(view.getContext(), DetailActivity.class);
-                    intent.putExtra("SelectedAlbum", album);
-                    intent.putExtra("SelectedSongIndex",i);
-                    startActivity(intent);
-                }
-            });
-        }
+        songsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(view.getContext(), DetailActivity.class);
+                intent.putExtra(Constants.SELECTED_ALBUM, album);
+                intent.putExtra(Constants.SELECTED_SONG_INDEX,i);
+                startActivity(intent);
+            }
+        });
 
     }
 }

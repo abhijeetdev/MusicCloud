@@ -26,15 +26,15 @@ public class SongsAdapter extends ArrayAdapter <Song> {
 
         if (convertView == null) {
             final LayoutInflater layoutInflater = LayoutInflater.from(getContext());
-            convertView = layoutInflater.inflate(R.layout.layout_song, null);
+            convertView = layoutInflater.inflate(R.layout.song_item, null);
         }
 
         Song currentSong = getItem(position);
 
-        final TextView titleTextView = (TextView)convertView.findViewById(R.id.textViewTitle);
+        TextView titleTextView = (TextView)convertView.findViewById(R.id.textViewTitle);
         titleTextView.setText(currentSong.getTitle());
 
-        final TextView  durationTextView = (TextView)convertView.findViewById(R.id.textViewDuration);
+        TextView  durationTextView = (TextView)convertView.findViewById(R.id.textViewDuration);
         durationTextView.setText(currentSong.getDuration());
 
         return convertView;

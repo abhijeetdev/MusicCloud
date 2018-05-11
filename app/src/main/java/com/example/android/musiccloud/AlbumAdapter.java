@@ -31,10 +31,9 @@ public class AlbumAdapter extends ArrayAdapter<Album> {
 
         Album album = getItem(position);
 
-        final ImageView imageView = (ImageView)convertView.findViewById(R.id.imageView_cover_art);
+        final ImageView imageView = (ImageView)convertView.findViewById(R.id.imageViewCoverArt);
         imageView.setImageResource(album.getIconResourceID());
-        //final ImageView imageViewFavorite = (ImageView)convertView.findViewById(R.id.image_view_favorite_album);
-        final TextView albumNameTextView = (TextView)convertView.findViewById(R.id.text_view_album_name);
+        final TextView albumNameTextView = (TextView)convertView.findViewById(R.id.textViewAlbumName);
         albumNameTextView.setText(album.getTitle());
 
         return convertView;

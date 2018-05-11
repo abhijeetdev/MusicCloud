@@ -17,33 +17,33 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final ArrayList<Album> albums = new ArrayList<>();
-        ArrayList<Song> songs = new ArrayList<>();
-                songs.add(new Song("Ae Watan (Male)","Arijit Singh","03:43"));
-                songs.add(new Song("Dilbaro","Harshdeep Kaur, Vibha Saraf, Shankar Mahadevan","05:14"));
-                songs.add(new Song("Razi title track","Arijit Singh","06:30"));
-                songs.add(new Song("Ae Watan (Female)","Sunidhi Chauhan","03:31"));
-        albums.add(new Album("Raazi", R.drawable.raazi,R.drawable.raazi_icon, songs));
+        ArrayList<Song> songsList = new ArrayList<>();
+                songsList.add(new Song("Ae Watan (Male)","Arijit Singh","03:43"));
+                songsList.add(new Song("Dilbaro","Harshdeep Kaur, Vibha Saraf, Shankar Mahadevan","05:14"));
+                songsList.add(new Song("Razi title track","Arijit Singh","06:30"));
+                songsList.add(new Song("Ae Watan (Female)","Sunidhi Chauhan","03:31"));
+        albums.add(new Album("Raazi", R.drawable.raazi,R.drawable.raazi_icon, songsList));
 
-        songs = new ArrayList<>();
-        songs.add(new Song("Ae Watan (Male)","Arijit Singh","03:43"));
-        songs.add(new Song("Dilbaro","Harshdeep Kaur, Vibha Saraf, Shankar Mahadevan","05:14"));
-        songs.add(new Song("Razi title track","Arijit Singh","06:30"));
-        songs.add(new Song("Ae Watan (Female)","Sunidhi Chauhan","03:31"));
-        albums.add(new Album("Raazi 1", R.drawable.raazi,R.drawable.raazi_icon, songs));
+        songsList = new ArrayList<>();
+        songsList.add(new Song("Ae Watan (Male)","Arijit Singh","03:43"));
+        songsList.add(new Song("Dilbaro","Harshdeep Kaur, Vibha Saraf, Shankar Mahadevan","05:14"));
+        songsList.add(new Song("Razi title track","Arijit Singh","06:30"));
+        songsList.add(new Song("Ae Watan (Female)","Sunidhi Chauhan","03:31"));
+        albums.add(new Album("Raazi 1", R.drawable.raazi,R.drawable.raazi_icon, songsList));
 
-        songs = new ArrayList<>();
-        songs.add(new Song("Ae Watan (Male)","Arijit Singh","03:43"));
-        songs.add(new Song("Dilbaro","Harshdeep Kaur, Vibha Saraf, Shankar Mahadevan","05:14"));
-        songs.add(new Song("Razi title track","Arijit Singh","06:30"));
-        songs.add(new Song("Ae Watan (Female)","Sunidhi Chauhan","03:31"));
-        albums.add(new Album("Raazi 2", R.drawable.raazi,R.drawable.raazi_icon, songs));
+        songsList = new ArrayList<>();
+        songsList.add(new Song("Ae Watan (Male)","Arijit Singh","03:43"));
+        songsList.add(new Song("Dilbaro","Harshdeep Kaur, Vibha Saraf, Shankar Mahadevan","05:14"));
+        songsList.add(new Song("Razi title track","Arijit Singh","06:30"));
+        songsList.add(new Song("Ae Watan (Female)","Sunidhi Chauhan","03:31"));
+        albums.add(new Album("Raazi 2", R.drawable.raazi,R.drawable.raazi_icon, songsList));
 
-        songs = new ArrayList<>();
-        songs.add(new Song("Ae Watan (Male)","Arijit Singh","03:43"));
-        songs.add(new Song("Dilbaro","Harshdeep Kaur, Vibha Saraf, Shankar Mahadevan","05:14"));
-        songs.add(new Song("Razi title track","Arijit Singh","06:30"));
-        songs.add(new Song("Ae Watan (Female)","Sunidhi Chauhan","03:31"));
-        albums.add(new Album("Raazi 3", R.drawable.raazi,R.drawable.raazi_icon, songs));
+        songsList = new ArrayList<>();
+        songsList.add(new Song("Ae Watan (Male)","Arijit Singh","03:43"));
+        songsList.add(new Song("Dilbaro","Harshdeep Kaur, Vibha Saraf, Shankar Mahadevan","05:14"));
+        songsList.add(new Song("Razi title track","Arijit Singh","06:30"));
+        songsList.add(new Song("Ae Watan (Female)","Sunidhi Chauhan","03:31"));
+        albums.add(new Album("Raazi 3", R.drawable.raazi,R.drawable.raazi_icon, songsList));
 
 
         final AlbumAdapter albumAdapter = new AlbumAdapter(this, albums);
@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(view.getContext(), SongsActivity.class);
                 intent.putExtra("SelectedAlbum", albums.get(position));
                 startActivity(intent);
-                albumAdapter.notifyDataSetChanged();
             }
         });
 
